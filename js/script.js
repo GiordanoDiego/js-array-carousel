@@ -41,10 +41,9 @@ console.log('leftButton', leftButton, typeof leftButton);
 const rightButton = document.getElementById('right_button');
 console.log('rightButton', rightButton, typeof rightButton);
 
-//prova di aggiunta classe: --------------------
 
 
-//.className += ' d-block';
+// implemento tasto right 
 let  i = 1;
 rightButton.addEventListener('click', function(){
     // assegnare la classe show-img all'elemento iesimo
@@ -65,11 +64,31 @@ rightButton.addEventListener('click', function(){
     
 
     console.log('decremento', i, typeof i);
-   
-    
-
     
 })
 
+// implemento tasto left 
+
+leftButton.addEventListener('click', function(){
+    // assegnare la classe show-img all'elemento iesimo
+    let noPropertyImg = document.querySelector(`.img-container >*:nth-child(${i}) img`); 
+    console.log('noPropertyImg', noPropertyImg, typeof propenoPropertyImgrtyImg);
+
+    noPropertyImg.className = " ";
+    console.log('noPropertyImg', noPropertyImg, typeof noPropertyImg);
+
+    i--;
+    console.log('decremento', i, typeof i);
+    if (i == 0){
+        i=arrayImgHTML.length;
+        console.log('i dopo if', i, typeof i);
+
+    }
+
+    let propertyImg = document.querySelector(`.img-container >*:nth-child(${i}) img`); 
+    propertyImg.className = "show-img";
+    console.log('propertyImg', propertyImg, typeof propertyImg); 
+    
+})
 
 
