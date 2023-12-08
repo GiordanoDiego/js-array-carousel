@@ -18,17 +18,58 @@ console.log('imgContainer', imgContainer, typeof imgContainer);
 
 // creo un array che contiene tutte le stringhe da inserire nell'html
 const arrayImgHTML = [
-    '<img class="d-block" src="./img/04.webp" alt="">',
-    '<img class="" src="./img/01.webp" alt="">',
-    '<img class="" src="./img/02.webp" alt="">',
-    '<img class="" src="./img/03.webp" alt="">',
-    '<img class="" src="./img/05.webp" alt="">'
+    '<div><img class="show-img" src="./img/01.webp" alt=""></div>',
+    '<div><img class="" src="./img/02.webp" alt=""></div>',
+    '<div><img class="" src="./img/03.webp" alt=""></div>',
+    '<div><img class="" src="./img/04.webp" alt=""></div>',
+    '<div><img class="" src="./img/05.webp" alt=""></div>'
 ]
-console.log('arrayImgHTML', arrayImgHTML, typeof arrayImgHTML);
+console.log('arrayImgHTML Lenght', arrayImgHTML.length, typeof arrayImgHTML);
 
-// creo un ciclo for che inserisce le stringhe dell'array dentro l'html
+ //creo un ciclo for che inserisce le stringhe dell'array dentro l'html
 
-for(let i=0; i < arrayImgHTML.length; i++){
-    imgContainer.innerHTML += arrayImgHTML[i];
-}
+ for(let i=0; i < arrayImgHTML.length; i++){
+     imgContainer.innerHTML += arrayImgHTML[i];
+ }
+
+/* assegno una funzione ai bottoni, ovvero: cerco di assegnare la classe "d-block" alle varie classi
+    cliccando sulla freccia 
+*/
+const leftButton = document.getElementById('left_button');
+console.log('leftButton', leftButton, typeof leftButton);
+
+const rightButton = document.getElementById('right_button');
+console.log('rightButton', rightButton, typeof rightButton);
+
+//prova di aggiunta classe: --------------------
+
+
+//.className += ' d-block';
+let  i = 1;
+rightButton.addEventListener('click', function(){
+    // assegnare la classe show-img all'elemento iesimo
+    let noPropertyImg = document.querySelector(`.img-container >*:nth-child(${i}) img`); 
+    console.log('noPropertyImg', noPropertyImg, typeof propenoPropertyImgrtyImg);
+
+    noPropertyImg.className = " ";
+    console.log('noPropertyImg', noPropertyImg, typeof noPropertyImg);
+
+    i++;
+    if (i > arrayImgHTML.length){
+        i=1;
+    }
+
+    let propertyImg = document.querySelector(`.img-container >*:nth-child(${i}) img`); 
+    propertyImg.className = "show-img";
+    console.log('propertyImg', propertyImg, typeof propertyImg);
+    
+
+    console.log('decremento', i, typeof i);
+   
+    
+
+    
+})
+
+
 
